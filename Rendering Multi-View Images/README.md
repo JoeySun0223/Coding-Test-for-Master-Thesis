@@ -20,8 +20,9 @@ This project provides a Python script to process and render 3D models using Blen
    pip install -r requirements.txt
 
 3. **Run the Script: Use the following command to run the script with Blender:**
-   cd your path/src
+   ```bash
+   cd your/path/src
    blender --background --python render_script.py
    
-4. **Check Outputs:**
+5. **Check Outputs:**
 Rendered images and Combined models are saved in the output directory.

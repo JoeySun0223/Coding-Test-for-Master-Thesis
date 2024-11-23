@@ -13,21 +13,21 @@ Testing: The trained model is used to segment new images of cats.
    pip install -r requirements.txt
 
 2. **Training the Model**:
-  Use the main.py script to train the model. 
-  ```bash
-  python main.py
-  ```
-  The training process:
-  Uses images from Data/input/ as input.
-  Uses segmentation masks from Data/mask/.
-  Saves the trained model as model.pth in the results/ folder.
+   Use the main.py script to train the model. 
+   ```bash
+   python main.py
+   ```
+   The training process:
+   Uses images from Data/input/ as input.
+   Uses segmentation masks from Data/mask/.
+   Saves the trained model as model.pth in the results/ folder.
 
 3. **Training the Model**:
-  Use the test.py script to test the trained model.
-  ```bash
-  python test.py
-  ```
-  The testing process:
-  Loads the trained model from results/model.pth.
-  Performs segmentation on images in the Data/Test_Data/ folder.
-  Saves the segmented images to the Data/Result_Data/ folder.
+   Use the test.py script to test the trained model.
+   ```bash
+   python test.py
+   ```
+   The testing process:
+   Loads the trained model from results/model.pth.
+   Performs segmentation on images in the Data/Test_Data/ folder.
+   Saves the segmented images to the Data/Result_Data/ folder.

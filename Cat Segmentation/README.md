@@ -14,8 +14,9 @@ Testing: The trained model is used to segment new images of cats.
 
 2.**Training the Model**:
   Use the main.py script to train the model. 
-  ```bash
+   ```bash
   python main.py
+  ```
 
   The training process:
   Uses images from Data/input/ as input.

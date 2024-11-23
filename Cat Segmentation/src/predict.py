@@ -3,18 +3,15 @@ import torch
 from PIL import Image
 import numpy as np
 from UNet import UNet
-from Dataset import get_transform
 
 def load_model(model_path):
-    """Load the trained model."""
     model = UNet()
-    model.load_state_dict(torch.load(model_path, map_location=torch.device("cpu")))
+    model.load_state_dict(torch.load(model_path, map_location=torch.device("cpu"), weights_only=True))
     model.eval()
     print("Model loaded successfully!")
     return model
 
 def predict_single(image_path, model, transform):
-    """Predict a single image."""
     image = Image.open(image_path).convert("RGB")
     image_tensor = transform(image).unsqueeze(0)  # Add batch dimension
 
@@ -26,9 +23,6 @@ def predict_single(image_path, model, transform):
     return np.array(image), mask
 
 def predict_folder(input_folder, output_folder, model, transform):
-    """
-    Predict all images in the input folder and save results to the output folder.
-    """
     os.makedirs(output_folder, exist_ok=True)
     for filename in os.listdir(input_folder):
         if not filename.lower().endswith(('.png', '.jpg', '.jpeg')):
